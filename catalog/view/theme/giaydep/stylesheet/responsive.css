@@ -12,13 +12,6 @@
 }
 
 @media (max-width:1024px) {
-    #home-header .bordertop{
-        border-top: none;
-        background-color: transparent;
-    }
-    .home-background{
-        display: none;
-    }
 
 }
 

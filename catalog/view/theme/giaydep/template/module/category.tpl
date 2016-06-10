@@ -140,30 +140,16 @@
 </script>
 
 <?php } else { ?>
-<div id="id<?php echo $module_id; ?>">
+<div id="cat-home">
      <div class="bgheading">
       <h3 class="cat-title"><?php echo $heading_title; ?></h3>
 	  </div>
 <div class="list-group catehome">
   <?php foreach ($categories as $category) { ?>
   <?php if ($category['category_id'] == $category_id) { ?>
-  <a href="<?php echo $category['href']; ?>" class="list-group-item th catenamehome active" ><i class="fa fa-chevron-right" aria-hidden="true" style="color: #4C4747;"></i>&nbsp;<?php echo $category['name']; ?></a>
-  <?php if ($category['children']) { ?>
-  <?php foreach ($category['children'] as $child) { ?>
-  <?php if ($child['category_id'] == $child_id) { ?>
-  <a href="<?php echo $child['href']; ?>" class="list-group-item th catenamehome active">&nbsp;&nbsp;&nbsp;<?php echo $child['name']; ?></a>
+  <a href="<?php echo $category['href']; ?>" class="list-group-item th catenamehome active" ><i class="cat-icon icon-cap" aria-hidden="true" style="color: #4C4747;"></i>&nbsp;<?php echo $category['name']; ?></a>
   <?php } else { ?>
-  <a href="<?php echo $child['href']; ?>" class="list-group-item th">&nbsp;&nbsp;&nbsp;<?php echo $child['name']; ?></a>
-  <?php } ?>
-  <?php } ?>
-  <?php } ?>
-  <?php } else { ?>
-  <a href="<?php echo $category['href']; ?>" class="list-group-item th catenamehome"><i class="fa fa-chevron-right" aria-hidden="true" style="color: #4C4747;"></i>&nbsp;<?php echo $category['name']; ?></a>
-	  <?php if ($category['children']) { ?>
-	  <?php foreach ($category['children'] as $child) { ?>
-	  <a href="<?php echo $child['href']; ?>" class="list-group-item th">&nbsp;&nbsp;&nbsp;<?php echo $child['name']; ?></a>
-	  <?php } ?>
-	  <?php } ?>
+  <a href="<?php echo $category['href']; ?>" class="list-group-item th catenamehome"><i class="cat-icon icon-cap" aria-hidden="true" style="color: #4C4747;"></i>&nbsp;<?php echo $category['name']; ?></a>
   <?php } ?>
   <?php } ?>
 </div>

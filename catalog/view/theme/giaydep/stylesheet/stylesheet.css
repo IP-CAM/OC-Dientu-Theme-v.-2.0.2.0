@@ -12,9 +12,10 @@ body{
 }
 
 #linkstop{
-    height: 35px;
-    background-color:#1179bc;
-    line-height: 35px;
+    height: 45px;
+    background-color:#30a9de;
+    line-height: 45px;
+    color: #ffffff;
 }
 
 #linkstop a{
@@ -28,8 +29,9 @@ body{
 }
 
 #headermenu #search input{
-    border: 1px solid #df4717;
+    border: 1px solid #d1d1d1;
     border-radius: 0%;
+    font-size: 13px;
 
 }
 
@@ -39,19 +41,16 @@ body{
 }
 
 #search button{
-    background-color: #df4717;
+    background-color: #30a9de;
     color: #fff;
-    border: 1px solid #df4717;
+    border: 1px solid #30a9de;
     border-left: none;
+    padding-right: 17px;
+    padding-left: 17px;
 }
 
 #home-header{
     position: relative;
-}
-
-#home-header .bordertop{
-    border-top: 1px solid #e44919;
-    background-color: #ffffff;
 }
 
 #home-header .home-background{
@@ -62,6 +61,28 @@ body{
     left: 0px;
     right: 0px;
     z-index: -1;
+}
+
+.slogan-top{
+    background-color: #f2f2f2;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-top: 2px solid #30a9de;
+}
+
+#cat-home{
+    border: 1px solid #30a9de;
+}
+
+#cat-home .cat-title{
+    padding: 0px 10px;
+    background-color:#30a9de ;
+    color: #ffffff;
+    margin: 0px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
 }
 
 .infofooter{
@@ -145,10 +166,9 @@ body{
 }
 
 .top-quantity{
-    background-color: #d84315;
-    color: #fff;
     padding: 5px 11px;
     margin-left: 5px;
+    padding-right: 0px;
 }
 
 .no-padding-right{
@@ -163,6 +183,21 @@ body{
     margin-left: 0px;
     margin-right: 0px;
 }
+.no-padding{
+    padding: 0px;
+}
+.no-padding-lr{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.no-border{
+    border: none!important;
+}
+
+.border{
+    border: 1px solid #CCCCCC;
+}
 
 .no-radius{
     border-radius:0% ;
@@ -170,19 +205,6 @@ body{
 
 .no-padding{
     padding: 0px;
-}
-
-#navbarheader ul li.cart-img i{
-    position: absolute;
-    right: 19%;
-    top: 29px;
-    width: 0;
-    height: 0;
-    border-width: 7px;
-    border-style: solid dashed dashed;
-    border-color: transparent #e44919 transparent transparent;
-    font-size: 0;
-    line-height: 0;
 }
 
 .list-inline {
@@ -196,15 +218,15 @@ body{
 }
 
 .header-top .list-inline > li {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
-    padding-left: 48px;
-    padding-top: 5px;
+    padding-left: 20px;
+    padding-top: 8px;
     padding-bottom: 5px;
 }
 
 .header-top #navbarheader ul li a{
-    color: #e56247;
+    color: #0b0b0b;
 }
 
 .header-top .list-inline .heart {
@@ -283,28 +305,40 @@ body{
 
 .product-content{
     text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 25px;
+    text-transform: capitalize;
+    border-bottom: 1px solid #EDEDED;
+    border-right: 1px solid #EDEDED;
 }
 
-.product-tab{
+.product-vertical{
     text-align: center;
-    text-transform: none;
-    margin-bottom: 0px;
+    text-transform: capitalize;
+    border-bottom: 1px solid #EDEDED;
+    padding-bottom: 3px;
 }
 
-.product-content #button-cart {
-    width: 100%;
-    background-color: #f64c17;
-    color: #fff;
-    border: none;
-    padding: 5px 0px;
-    text-transform: uppercase;
+.product-vertical img{
+    max-width: 134px;
+    float: right;
 }
 
-.product-content .price{
-    color: #d4232b;
-    font-size: 19px;
+.product-vertical .name-card{
+    height: 80px;
+    overflow: hidden;
+}
+
+/*.product-content #button-cart {*/
+    /*width: 100%;*/
+    /*background-color: #f64c17;*/
+    /*color: #fff;*/
+    /*border: none;*/
+    /*padding: 5px 0px;*/
+    /*text-transform: uppercase;*/
+/*}*/
+
+.product-content .price, .product-vertical .price{
+    color: #e14a4a;
+    font-size: 15px;
 }
 
 .product-content .price-percent{
@@ -318,6 +352,8 @@ body{
 .product-content .price-sale{
     text-decoration: line-through;
 }
+
+
 
 .sale-tab ul li{
     float: left;
@@ -366,6 +402,27 @@ body{
     top: 0px;
     left: 0;
     width: 190px;
+}
+
+.cat-icon{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    border: 1px solid #3a4446;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 2;
+}
+
+.catehome a{
+    padding-left: 30px;
+}
+
+.icon-cap{
+    background: #fff url("../image/cap.jpg") no-repeat 50% 50%;
 }
 
 #cat-nav, .bg-heading{

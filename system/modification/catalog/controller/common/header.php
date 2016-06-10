@@ -310,6 +310,12 @@ class ControllerCommonHeader extends Controller {
                 $data['live_search_show_price'] = $this->config->get('live_search_show_price');
                 $data['live_search_show_description'] = $this->config->get('live_search_show_description');
             
+
+		$data['live_search_ajax_status'] = $this->config->get('live_search_ajax_status');
+		$data['live_search_show_image'] = $this->config->get('live_search_show_image');
+		$data['live_search_show_price'] = $this->config->get('live_search_show_price');
+		$data['live_search_show_description'] = $this->config->get('live_search_show_description');
+
 		$data['cart'] = $this->load->controller('common/cart');
 
 		// For page specific css
@@ -329,6 +335,12 @@ class ControllerCommonHeader extends Controller {
 			$data['class'] = 'common-home';
 		}
 
+
+                $old_route =  isset($this->request->get['route']) ? $this->request->get['route'] : false;
+                $this->request->get['route'] = 'common/header';
+                foreach (unserialize(positions) as $key => $position){$data[$key] = $this->load->controller('common/positions', $key);}
+                $this->request->get['route'] = $old_route;
+            
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/common/header.tpl', $data);
 		} else {
@@ -366,6 +378,7 @@ class ControllerCommonHeader extends Controller {
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
+foreach (unserialize(positions) as $key => $position){$data[$key] = $this->load->controller('common/positions', $key);}
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 

@@ -55,11 +55,11 @@
 <?php if ($images) { ?>
 <?php foreach ($images as $image) { ?>
           <meta property="og:image" content="<?php echo $image; ?>" />
-<?php } ?>         
+<?php } ?>
 <?php } ?>
 <?php }else{ ?>
            <meta property="og:image" content="<?php echo $icon; ?>" />
-<?php   }  ?>     
+<?php   }  ?>
 <!-- END Ultimate Seo Package -->
 
             <?php if ($live_search_ajax_status):?>
@@ -163,25 +163,127 @@
 			<?php endif;?>
             
 </head>
+<!--------ajax search--->
+<?php if ($live_search_ajax_status):?>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/live_search.css" />
+<script type="text/javascript"><!--
+	var live_search = {
+		selector: '#search',
+		text_no_matches: 'No matches.',
+		height: '50px',
+		delay: 400
+	}
+
+	$(document).ready(function() {
+		var html = '';
+		html += '<div id="live-search">';
+		html += '	<ul>';
+		html += '	</ul>';
+		html += '</div>';
+
+		$(live_search.selector).after(html);
+		$('input[name=\'search\']').autocomplete({
+			'source': function(request, response) {
+				if ($(live_search.selector + ' input[type=\'text\']').val() == '') {
+					$('#live-search').css('display','none');
+				}
+				else{
+					var html = '';
+					html += '<li style="text-align: center;height:10px;">';
+					html +=		'	<img class="loading" src="catalog/view/theme/default/image/loading.gif" />';
+					html +=	'</li>';
+					$('#live-search ul').html(html);
+					$('#live-search').css('display','block');
+				}
+				var filter_name = $(live_search.selector + ' input[type=\'text\']').val();
+
+				if (filter_name.length>0) {
+					$.ajax({
+						url: 'index.php?route=product/live_search&filter_name=' +  encodeURIComponent(request),
+						dataType: 'json',
+						success: function(products) {
+							$('#live-search ul li').remove();
+							if (!$.isEmptyObject(products)) {
+								var show_image = <?php echo $live_search_show_image;?>;
+							var show_price = <?php echo $live_search_show_price;?>;
+							var show_description = <?php echo $live_search_show_description;?>;
+
+							$.each(products, function(index,product) {
+								var html = '';
+
+								html += '<li>';
+								html += '<a href="' + product.url + '" title="' + product.name + '">';
+								if(product.image && show_image){
+								html += '	<div class="product-image"><img alt="' + product.name + '" src="' + product.image + '"></div>';
+							}
+								html += '	<div class="product-name">' + product.name ;
+								if(show_description){
+								html += '<p>' + product.extra_info + '</p>';
+							}
+								html += '</div>';
+								if(show_price){
+								if (product.special) {
+								html += '	<div class="product-price"><span class="special">' + product.price + '</span><span class="price">' + product.special + '</span></div>';
+							} else {
+								html += '	<div class="product-price"><span class="price">' + product.price + '</span></div>';
+							}
+							}
+								html += '<span style="clear:both"></span>';
+								html += '</a>';
+								html += '</li>';
+								$('#live-search ul').append(html);
+							});
+							} else {
+								var html = '';
+								html += '<li style="text-align: center;height:10px;">';
+								html +=		live_search.text_no_matches;
+								html +=	'</li>';
+
+								$('#live-search ul').html(html);
+							}
+							$('#live-search ul li').css('height',live_search.height);
+										$('#live-search').css('display','block');
+										return false;
+									}
+								});
+							}
+						},
+						'select': function(product) {
+							$('input[name=\'search\']').val(product.name);
+							}
+							});
+
+							$(document).bind( "mouseup touchend", function(e){
+					  var container = $('#live-search');
+					  if (!container.is(e.target) && container.has(e.target).length === 0)
+					  {
+					    container.hide();
+					  }
+					});
+				});
+	//--></script>
+<?php endif;?>
+
+<!--------ajax search--->
 <body class="<?php echo $class; ?>">
-<?php 
-	global $registry; $vie_module_groups = $registry->get('vie_module_groups'); 
+<?php
+	global $registry; $vie_module_groups = $registry->get('vie_module_groups');
 	if (!empty($vie_module_groups['vie_ht'])) { ?>
         <?php echo implode('', $vie_module_groups['vie_ht']); ?>
 <?php } ?>
 <header>
-
 <div class="header-top">
     <div id="linkstop">
     	<div class="container">
 	    	<div class="row">
-	        	<div class="col-md-2 col-sm-2 col-xs-4">
-		        	<a href="<?php echo $home; ?>">Trang chủ</a>
+	        	<div class="col-md-7 col-sm-2 col-xs-4">
+		        	<span>Hotline:</span>
 	        	</div>
-	        	<div class="col-md-10 col-sm-10 col-xs-8 alignright">
+	        	<div class="col-md-5 col-sm-10 col-xs-8 alignright">
                     <?php if(!$logged):?>
+					<a href="<?php echo $register;?>">Chăm sóc khách hàng</a>
+					<a href="<?php echo $register;?>">Kiểm tra đơn hàng</a>
 	        		<a href="<?php echo $login;?>">Đăng nhập</a>&nbsp;
-	        		<a href="<?php echo $register;?>">Đăng ký</i></a>&nbsp;
                     <?php else:?>
                     <a href="<?php echo $account; ?>">Tài khoản</a>
                     <a href="<?php echo $logout; ?>">Đăng xuất</a>
@@ -193,7 +295,7 @@
     <div id="headermenu">
     	<div class="container">
 	    	<div class="row">
-		        <div class="col-md-3 col-sm-3 col-xs-16">
+		        <div class="col-md-5 col-sm-3 col-xs-16">
 		            <div id="logo">
 		                <?php if ($logo) { ?>
 		                <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive mrthome"/></a>
@@ -205,13 +307,11 @@
 				<div class="col-md-5 col-sm-9 col-xs-16 group-nav">
 					<?php echo $search; ?>
 				</div>
-		        <div class="col-md-4 col-sm-12 col-xs-12 group-nav navbar-ex1-collapse">
+		        <div class="col-md-2 col-sm-12 col-xs-12 group-nav navbar-ex1-collapse">
 			        <!-- add -->
 					<nav id="navbarheader">
 					    <ul class="list-inline">
-					        <li class="heart"><a href="<?php echo $wishlist; ?>" id="wishlist-total" data-toggle="tipwishlist" title="<?php echo $text_wishlist; ?>" >Yêu thích</a></li>
-					        <li class="cart-img"><a href="<?php echo $shopping_cart; ?>">Giỏ hàng của bạn</a>  <?php echo $cart; ?><i class="hidden-md hidden-sm hidden-xs"></i> </li>
-
+					        <li class="cart-img"><a href="<?php echo $shopping_cart; ?>"><?php echo $cart; ?> sản phẩm</a></li>
 					    </ul>
 					</nav>
 					<!-- end -->
@@ -223,4 +323,3 @@
     </div>
 </div>
 
-	            

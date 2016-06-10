@@ -55,11 +55,11 @@
 <?php if ($images) { ?>
 <?php foreach ($images as $image) { ?>
           <meta property="og:image" content="<?php echo $image; ?>" />
-<?php } ?>         
+<?php } ?>
 <?php } ?>
 <?php }else{ ?>
            <meta property="og:image" content="<?php echo $icon; ?>" />
-<?php   }  ?>     
+<?php   }  ?>
 <!-- END Ultimate Seo Package -->
 </head>
 <!--------ajax search--->
@@ -165,8 +165,8 @@
 
 <!--------ajax search--->
 <body class="<?php echo $class; ?>">
-<?php 
-	global $registry; $vie_module_groups = $registry->get('vie_module_groups'); 
+<?php
+	global $registry; $vie_module_groups = $registry->get('vie_module_groups');
 	if (!empty($vie_module_groups['vie_ht'])) { ?>
         <?php echo implode('', $vie_module_groups['vie_ht']); ?>
 <?php } ?>
@@ -175,13 +175,14 @@
     <div id="linkstop">
     	<div class="container">
 	    	<div class="row">
-	        	<div class="col-md-2 col-sm-2 col-xs-4">
-		        	<a href="<?php echo $home; ?>">Trang chủ</a>
+	        	<div class="col-md-7 col-sm-2 col-xs-4">
+		        	<span>Hotline:</span>
 	        	</div>
-	        	<div class="col-md-10 col-sm-10 col-xs-8 alignright">
+	        	<div class="col-md-5 col-sm-10 col-xs-8 alignright">
                     <?php if(!$logged):?>
+					<a href="<?php echo $register;?>">Chăm sóc khách hàng</a>
+					<a href="<?php echo $register;?>">Kiểm tra đơn hàng</a>
 	        		<a href="<?php echo $login;?>">Đăng nhập</a>&nbsp;
-	        		<a href="<?php echo $register;?>">Đăng ký</i></a>&nbsp;
                     <?php else:?>
                     <a href="<?php echo $account; ?>">Tài khoản</a>
                     <a href="<?php echo $logout; ?>">Đăng xuất</a>
@@ -193,7 +194,7 @@
     <div id="headermenu">
     	<div class="container">
 	    	<div class="row">
-		        <div class="col-md-3 col-sm-3 col-xs-16">
+		        <div class="col-md-5 col-sm-3 col-xs-16">
 		            <div id="logo">
 		                <?php if ($logo) { ?>
 		                <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive mrthome"/></a>
@@ -205,13 +206,11 @@
 				<div class="col-md-5 col-sm-9 col-xs-16 group-nav">
 					<?php echo $search; ?>
 				</div>
-		        <div class="col-md-4 col-sm-12 col-xs-12 group-nav navbar-ex1-collapse">
+		        <div class="col-md-2 col-sm-12 col-xs-12 group-nav navbar-ex1-collapse">
 			        <!-- add -->
 					<nav id="navbarheader">
 					    <ul class="list-inline">
-					        <li class="heart"><a href="<?php echo $wishlist; ?>" id="wishlist-total" data-toggle="tipwishlist" title="<?php echo $text_wishlist; ?>" >Yêu thích</a></li>
-					        <li class="cart-img"><a href="<?php echo $shopping_cart; ?>">Giỏ hàng của bạn</a>  <?php echo $cart; ?><i class="hidden-md hidden-sm hidden-xs"></i> </li>
-
+					        <li class="cart-img"><a href="<?php echo $shopping_cart; ?>"><?php echo $cart; ?> sản phẩm</a></li>
 					    </ul>
 					</nav>
 					<!-- end -->
@@ -223,4 +222,3 @@
     </div>
 </div>
 
-	            

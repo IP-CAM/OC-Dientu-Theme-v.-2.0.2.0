@@ -1,7 +1,7 @@
 <?php
 class ControllerModuleFeatured extends Controller {
 	public function index($setting) {
-		
+		//var_dump($setting);
 		$this->load->language('module/featured');
 
 		$data['heading_title'] = isset($setting['name'])?$setting['name']:$this->language->get('heading_title');
@@ -17,7 +17,9 @@ class ControllerModuleFeatured extends Controller {
 
         $data['link_product'] = $this->url->link('product/product');
 
-        $data['id_featured'] = $setting['layout_module_id'];
+		$data['name_featured'] =$setting['name'];
+		$data['id_featured'] ='';
+        if(isset($setting['layout_module_id'])){$data['id_featured'] = $setting['layout_module_id'];}
 
 		$this->load->model('catalog/product');
 
