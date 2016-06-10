@@ -1,7 +1,7 @@
 <?php
 class ControllerModuleCategory extends Controller {
 	public function index($setting) {
-		//var_dump($setting);
+//		var_dump($setting);
 		$this->load->language('module/category');
 		$data['heading_title'] = $this->language->get('heading_title');
 		$data['module_id'] = isset($setting['layout_module_id'])?$setting['layout_module_id']:'0';
@@ -34,7 +34,7 @@ class ControllerModuleCategory extends Controller {
 
 		foreach ($categories as $category) {
 			$children_data = array();
-				$children = $this->model_catalog_category->getCategories($category['category_id']);				
+				$children = $this->model_catalog_category->getCategories($category['category_id']);
 				foreach($children as $child) {
 					$filter_data = array('filter_category_id' => $child['category_id'], 'filter_sub_category' => true);
 
@@ -49,12 +49,18 @@ class ControllerModuleCategory extends Controller {
 				'filter_category_id'  => $category['category_id'],
 				'filter_sub_category' => true
 			);
+			//var_dump($category);
+			// Level 1
+			$this->load->model('tool/image');
+			$image = empty($category['image']) ? 'no_image.jpg' : $category['image'];
+			$image = $this->model_tool_image->resize($image, 20, 20);
 
 			$data['categories'][] = array(
 				'category_id' => $category['category_id'],
 				'name'        => $category['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
 				'children'    => $children_data,
-				'href'        => $this->url->link('product/category', 'path=' . $category['category_id'])
+				'href'        => $this->url->link('product/category', 'path=' . $category['category_id']),
+				'image'		  =>  $image
 			);
 		}
 		

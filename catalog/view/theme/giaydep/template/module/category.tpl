@@ -147,9 +147,9 @@
 <div class="list-group catehome">
   <?php foreach ($categories as $category) { ?>
   <?php if ($category['category_id'] == $category_id) { ?>
-  <a href="<?php echo $category['href']; ?>" class="list-group-item th catenamehome active" ><i class="cat-icon icon-cap" aria-hidden="true" style="color: #4C4747;"></i>&nbsp;<?php echo $category['name']; ?></a>
+  <a href="<?php echo $category['href']; ?>" class="list-group-item th catenamehome active" ><?php echo "<i class='cat-icon' style='background:url(\"".$category['image']."\") no-repeat 50% 50%'></i>";?> &nbsp;<?php echo $category['name']; ?> &nbsp;<?php echo $category['name']; ?></a>
   <?php } else { ?>
-  <a href="<?php echo $category['href']; ?>" class="list-group-item th catenamehome"><i class="cat-icon icon-cap" aria-hidden="true" style="color: #4C4747;"></i>&nbsp;<?php echo $category['name']; ?></a>
+  <a href="<?php echo $category['href']; ?>" class="list-group-item th catenamehome"><?php echo "<i class='cat-icon' style='background:url(\"".$category['image']."\") no-repeat 50% 50%'></i>";?> &nbsp;<?php echo $category['name']; ?></a>
   <?php } ?>
   <?php } ?>
 </div>
