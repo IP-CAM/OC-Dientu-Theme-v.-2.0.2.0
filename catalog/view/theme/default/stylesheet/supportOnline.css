@@ -1,0 +1,16 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 9, 2014, 10:18:39 AM
+    Author     : billy tran
+*/
+
+.supportonline ul{padding: 0px}
+.supportonline ul li{display: block;line-height: 40px;}
+.image-support{float: left;width: 90px;margin-right: 6px;}
+.supportonline ul li .position img{height: 17px; margin-top: 5px;}
+.supportonline ul li .position{line-height: 20px;float: left;}
+.supportonline ul li .position span{color: #f55438}

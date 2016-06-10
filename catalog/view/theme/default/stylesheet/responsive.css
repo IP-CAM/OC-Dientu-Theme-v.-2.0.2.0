@@ -1,0 +1,94 @@
+/***************************** min-with ****************************/
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+	.col-md-15 {
+        width: 20%;
+        float: left;
+    }
+
+	.navbar {
+		display: none;
+	}
+
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+}
+
+@media (min-width: 768px) {
+	.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+
+    .navbar-nav2 > li {
+	    float: left;
+	}
+}
+/***************************** max-with ****************************/
+@media (max-width: 991px) {
+	.navbar2 {
+		display: none;
+	}
+    nav#navbarheader {
+        /*display: none;*/
+    }
+
+}
+
+@media (max-width: 767px) {
+    #linkstop {
+        /*display: none;*/
+    }
+    .header-top {
+        /*height: 85px;*/
+    }
+    .titlesalesandcustomers {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 650px) {
+    .bannertitle {
+        display: none !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .col-xs-17 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 422px) {
+    .col-xs-18 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 367px) {
+    .col-xs-16 {
+        width: 100%;
+        text-align: center;
+    }
+    .header-top {
+        /*height: 128px;*/
+    }
+    #headermenu {
+        /*height: 128px;*/
+    }
+    .navbar-toggle {
+        display: inline-block;
+        float: none;
+    }
+    #logo .img-responsive {
+        display: inline-block;
+    }
+}
