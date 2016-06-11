@@ -87,26 +87,27 @@ body{
 
 .infofooter{
     text-align: center;
-    background-color: #0f6caa;
-    margin-top: 5px;
+    background-color: #363636;
     color: #ffffff;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+}
+
+.name-footer{
+    text-transform: uppercase;
 }
 
 .top-footer{
-    margin: 20px 0px;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 20px 0px;
 }
 
 .info-top a{
     display: block;
-    color: #0b3449;
+    color: #827b90;
     margin-bottom: 5px;
-}
-
-.slogan-content{
-    background-color: #f0f0f0;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 20px;
 }
 
 .info-top .info-header{
@@ -120,6 +121,7 @@ body{
 .info-top span{
     display: block;
     margin-bottom: 5px;
+    color: #827b90;
 }
 
 .slogan-ic1{

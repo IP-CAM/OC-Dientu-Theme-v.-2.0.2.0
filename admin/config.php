@@ -37,5 +37,9 @@ define('positions', serialize(array(
     'home_right' => array(
         'label' => 'Home right',
         'template' => 'home_right.tpl' //you can use the same template file for several positions if you want
+    ),
+    'header_left' => array(
+        'label' => 'Header left',
+        'template' => false //you can use the same template file for several positions if you want
     )
 )));

@@ -176,7 +176,7 @@
     	<div class="container">
 	    	<div class="row">
 	        	<div class="col-md-7 col-sm-2 col-xs-4">
-		        	<span>Hotline:</span>
+		        	<span>Hotline: <?php echo $header_left; ?></span>
 	        	</div>
 	        	<div class="col-md-5 col-sm-10 col-xs-8 alignright">
                     <?php if(!$logged):?>
