@@ -1,6 +1,7 @@
 <?php
 class ControllerModuleCarousel extends Controller {
 	public function index($setting) {
+		var_dump($setting);
 		static $module = 0;
 
 		$this->load->model('design/banner');

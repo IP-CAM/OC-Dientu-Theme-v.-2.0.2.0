@@ -61,4 +61,6 @@ $_['error_upload_6']        = 'Cảnh báo: Thiếu thư mục tạm!';
 $_['error_upload_7']        = 'Cảnh báo: Không thể ghi tập tin lên đĩa!';
 $_['error_upload_8']        = 'Cảnh báo: File tải lên bị buộc phải dừng bởi extension!';
 $_['error_upload_999']      = 'Cảnh báo: Không có mã lỗi!';
+
+//newletter
 ?>

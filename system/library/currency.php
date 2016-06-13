@@ -55,7 +55,6 @@ class Currency {
 			$symbol_left   = $this->currencies[$this->code]['symbol_left'];
 			$symbol_right  = $this->currencies[$this->code]['symbol_right'];
 			$decimal_place = $this->currencies[$this->code]['decimal_place'];
-
 			$currency = $this->code;
 		}
 
@@ -88,14 +87,13 @@ class Currency {
 		} else {
 			$thousand_point = '';
 		}
-
 		$string .= number_format(round($value, (int)$decimal_place), (int)$decimal_place, $decimal_point, $thousand_point);
 
 		if (($symbol_right) && ($format)) {
 			$string .= $symbol_right;
 		}
-
 		return $string;
+
 	}
 
 	public function convert($value, $from, $to) {

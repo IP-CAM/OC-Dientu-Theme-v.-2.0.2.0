@@ -1,0 +1,39 @@
+@media (max-width:768px) {
+    .border-new{
+        display: block;
+        border: none;
+    }
+
+    #home-header{
+        position: inherit;
+    }
+
+
+}
+
+@media (max-width:1024px) {
+    #column-left{
+        margin-bottom: 10px;
+    }
+
+    #linkstop .alignright{
+        text-align: left;
+    }
+
+    .product-vertical{
+        padding-bottom: 8.5px;
+    }
+
+    .product-vertical img{
+        max-width: 112px;
+    }
+}
+
+@media (max-width: 403px) {
+    .mnft_ic{
+        height: auto;
+        padding-top: 10px;
+        margin-left: 0px;
+    }
+}
+

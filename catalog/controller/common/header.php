@@ -139,7 +139,7 @@ class ControllerCommonHeader extends Controller {
         $data['khuyenmai'] = $this->url->link('information/section', 'section_id=' . '8');
         $data['baogia'] = $this->url->link('information/section', 'section_id=' . '9');
         $data['huongdan'] = $this->url->link('information/section', 'section_id=' . '10');
-        $data['suutap'] = $this->url->link('information/section', 'section_id=' . '11');
+        $data['cskh'] = $this->url->link('information/section', 'section_id=' . '10');
 
 
 		$status = true;

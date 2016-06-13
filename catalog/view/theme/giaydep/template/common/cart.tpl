@@ -1,1 +1,0 @@
-<span class="top-quantity"><?php echo $text_items; ?></span>

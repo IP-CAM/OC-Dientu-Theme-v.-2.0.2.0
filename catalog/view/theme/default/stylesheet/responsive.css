@@ -4,11 +4,21 @@
         width: 20%;
         float: left;
     }
+
+    .col-lg-18 {
+        width: 12.5%;
+        float: left;
+    }
 }
 
 @media (min-width: 992px) {
 	.col-md-15 {
         width: 20%;
+        float: left;
+    }
+
+    .col-md-18 {
+        width: 12.5%;
         float: left;
     }
 
