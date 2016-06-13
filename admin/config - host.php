@@ -28,3 +28,19 @@ define('DB_USERNAME', 'dientu_user');
 define('DB_PASSWORD', 'Luong@1235');
 define('DB_DATABASE', 'dientu_database');
 define('DB_PREFIX', 'tgm_');
+
+define('positions', serialize(array(
+    'home_left' => array( //this key results in 'echo $position_1' in your template file where you want to show your modules
+        'label' => 'Home left', //this is just for the label that shows in the select list when configuring your modules
+        'template' => 'home_left.tpl' //this is the template file for the position, similar to common/content_top.tpl
+    ),
+    'home_right' => array(
+        'label' => 'Home right',
+        'template' => 'home_right.tpl' //you can use the same template file for several positions if you want
+    ),
+    'header_left' => array(
+        'label' => 'Header left',
+        'template' => false //you can use the same template file for several positions if you want
+    )
+)));
+

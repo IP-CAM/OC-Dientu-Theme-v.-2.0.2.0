@@ -32,11 +32,11 @@ $_['column_action']          = 'Thao tác';
 // Entry
 $_['entry_name']             = 'Tên sản phẩm:';
 $_['entry_meta_keyword']     = 'Từ khóa:';
-$_['entry_meta_description'] = 'Mô tả từ khóa:';
+$_['entry_meta_description'] = 'Mô tả ngắn:';
 $_['entry_description']      = 'Mô tả sản phẩm:';
 $_['entry_store']            = 'Cửa hàng:';
 $_['entry_keyword']          = 'Link thân thiện:';
-$_['entry_model']            = 'Model:';
+$_['entry_model']            = 'Mã sản phẩm:';
 $_['entry_sku']              = 'SKU:';
 $_['entry_upc']              = 'UPC:';
 $_['entry_ean']              = 'EAN:<br/><span class="help">European Article Number</span>';
