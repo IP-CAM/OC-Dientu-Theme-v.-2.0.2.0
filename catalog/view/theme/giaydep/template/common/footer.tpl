@@ -1,4 +1,6 @@
 <footer xmlns="http://www.w3.org/1999/html">
+  <?php echo $footer_top; ?>
+
   <div class="top-footer slogan-content">
     <div class="container">
       <div class="row">

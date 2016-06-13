@@ -2,6 +2,8 @@
 class ControllerCommonMenu extends Controller {
 	public function index() {
 		$this->load->language('common/menu');
+		$data['news'] = $this->url->link('common/newsletter', 'token=' . $this->session->data['token'], 'SSL');
+		$data['newsletter'] = "Newsletter";
 
 		$data['text_affiliate'] = $this->language->get('text_affiliate');
 		$data['text_api'] = $this->language->get('text_api');

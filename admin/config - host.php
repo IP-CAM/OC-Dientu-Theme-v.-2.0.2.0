@@ -41,6 +41,10 @@ define('positions', serialize(array(
     'header_left' => array(
         'label' => 'Header left',
         'template' => false //you can use the same template file for several positions if you want
+    ),
+    'footer_top' => array(
+        'label' => 'Footer top',
+        'template' => false //you can use the same template file for several positions if you want
     )
 )));
 

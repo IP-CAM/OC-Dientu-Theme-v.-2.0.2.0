@@ -3,6 +3,10 @@ body{
     font-family: Arial,Helvetica,sans-serif;
 }
 
+footer{
+    margin-top: 20px;
+}
+
 .alignright {
     text-align: right;
 }
@@ -99,7 +103,6 @@ body{
 }
 
 .top-footer{
-    margin-top: 20px;
     background-color: #f0f0f0;
     padding: 20px 0px;
 }
@@ -122,18 +125,6 @@ body{
     display: block;
     margin-bottom: 5px;
     color: #827b90;
-}
-
-.slogan-ic1{
-    background: url('../image/hang_chinh_hang_2.1.png') no-repeat left center;
-}
-
-.slogan-ic2{
-    background: url('../image/dong_goi_2.1.png') no-repeat left center;
-}
-
-.slogan-ic3{
-    background: url('../image/kiem_tra_hang_2.1.png') no-repeat left center;
 }
 
 .mnft_ic {
@@ -1064,3 +1055,30 @@ h2.mess-title{
     font-weight: bold;
 }
 
+.subscrible{
+    background-color: #30a9de;
+    padding: 14px 0px;
+}
+
+.subscrible .form-group{
+    margin: 0px;
+}
+
+.subscrible h2{
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0px;
+    margin-top: 8px;
+}
+
+.subscrible button{
+    background-color: #0077ab;
+    border: 1px solid #0077ab;
+    color: #ffffff;
+}
+
+.subscrible button:hover{
+    background-color: #F3F2F2;
+}
